@@ -19,6 +19,7 @@ admin.initializeApp({
     storageBucket: `${serviceAccount.project_id}.appspot.com`,
 });
 
-export { admin };
-export const db = admin.firestore();
-export const auth = admin.auth();
+const db = admin.firestore();
+const auth = admin.auth();
+
+export { admin, db, auth };
