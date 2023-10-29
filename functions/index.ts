@@ -29,7 +29,7 @@ const ServiceAccountPARAMS = {
 
 admin.initializeApp({
     credential: admin.credential.cert(ServiceAccountPARAMS),
-    storageBucket: "lynx-mart.appspot.com",
+    storageBucket: `${serviceAccount.project_id}.appspot.com`,
 });
 
 const db = admin.firestore();
