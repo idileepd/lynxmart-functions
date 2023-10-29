@@ -7,6 +7,8 @@ import * as admin from "firebase-admin";
 
 import * as serviceAccount from "./src/config.json";
 import { onRequest } from "firebase-functions/v2/https";
+import { onDocumentCreated } from "firebase-functions/v2/firestore";
+
 import { logger } from "firebase-functions";
 
 import { v4 as uuidv4 } from "uuid";
@@ -41,22 +43,10 @@ export const signupUser = onRequest(async (req, response) => {
     response.send(doc);
 });
 
-
-// import { authRoutes } from "./routes/auth.routes";
-// import { userRoutes } from "./routes/user.routes";
-
-// const app = express();
-// app.use(express.json() as RequestHandler);
-// app.use(express.urlencoded({
-//     extended: true,
-// }) as RequestHandler);
-// app.use(cors({ origin: true }));
-
-// userRoutes(app);
-// authRoutes(app);
-
-// const runtimeOpts = {
-//     timeoutSeconds: 180,
-// };
-
-// export const api = functions.runWith(runtimeOpts).https.onRequest(app);
+export const testDocCreate = onDocumentCreated("users/{uid}", async (event) => {
+    console.log("called !!! API");
+    if (event) {
+        console.log("TEST DOC ADD", event.data?.data());
+    }
+    console.log("-------- DONE !! ");
+});
