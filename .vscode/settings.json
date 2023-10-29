@@ -1,4 +1,7 @@
 {
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
     "editor.fontLigatures": true,
     "explorer.decorations.badges": true,
     "editor.bracketPairColorization.enabled": true,
@@ -84,15 +87,18 @@
         "*.json": "jsonc"
     },
     "cSpell.words": [
+        "appspot",
         "cloudsdktool",
         "fileupload",
         "firebaseio",
+        "firestore",
         "gcloud",
         "gserviceaccount",
         "htmlextra",
         "KEYHOLDER",
         "manabackend",
         "MORG",
-        "prestart"
+        "prestart",
+        "uuidv"
     ]
 }
